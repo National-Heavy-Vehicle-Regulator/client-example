@@ -1,0 +1,56 @@
+query getPBSContacts($pbsContactFilter: PbsContactFilterInput!) {
+    pbsContactQuery(pbsContactFilter: $pbsContactFilter){
+      @TODO missing field providing total count of records
+      filter{
+        fields{
+          ip
+          created
+          modified
+          modifiedOffline
+          createdBy
+          modifiedBy
+          id
+          contactType
+          firstName
+          lastName
+          companyName
+          companyWebsite
+          email
+          workPhone
+          mobilePhone
+          fax
+          postalAddress
+          jurisdiction
+          designation
+          team
+          department
+          status
+        }
+        @TODO several missing filter fields
+      }
+      data{
+        ip
+        created
+        modified
+        modifiedOffline
+        createdBy
+        modifiedBy
+        id
+        contactType
+        firstName
+        lastName
+        companyName
+        companyWebsite
+        email
+        workPhone
+        mobilePhone
+        fax
+        postalAddress
+        jurisdiction
+        designation
+        team
+        department
+        status
+      }
+    }
+}

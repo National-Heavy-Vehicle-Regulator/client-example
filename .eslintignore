@@ -1,0 +1,12 @@
+node_modules/
+dist/
+public/
+coverage/
+utils/test
+*.snap.*
+serviceWorker.ts
+*.config.js
+*.generated.tsx
+*/typeDefs/types.ts
+jest-resolver.js
+*.d.ts

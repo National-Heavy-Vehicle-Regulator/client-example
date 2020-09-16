@@ -1,0 +1,42 @@
+{
+  "compilerOptions": {
+    "baseUrl": "src",
+    "paths": {
+      "assets": ["assets"],
+      "common": ["src/common"],
+      "app": ["src/app"],
+      "components": ["src/components"],
+      "containers": ["src/containers"],
+      "layouts": ["src/layouts"],
+      "utils": ["src/utils"],
+      "typeDefs": ["src/typeDefs"]
+    },
+    "composite": true,
+    "jsx": "react",
+    "outDir": "./dist/",
+    "noImplicitAny": true,
+    "allowSyntheticDefaultImports": true,
+    "module": "es2020",
+    "resolveJsonModule": true,
+    "target": "es5",
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "strictPropertyInitialization": false,
+    "incremental": true,
+    "lib": ["es2018", "esnext.asynciterable", "DOM"],
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "declaration": true,
+    "importHelpers": true,
+    "typeRoots" : [ "./node_modules/@types", "./types"]
+  },
+  "include": ["src", "./src/common/**/*.json", "./types/**/*.d.ts", "./jest-resolver.js"],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "**/*.d.ts",
+    "**/*.test.ts"
+  ]
+}

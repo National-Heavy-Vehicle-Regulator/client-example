@@ -1,0 +1,20 @@
+{
+  "roots": ["src", "src/components"],
+  "moduleDirectories": ["node_modules", "src"],
+  "moduleFileExtensions": ["jsx", "js", "tsx", "ts"],
+  "moduleNameMapper": {
+    ".+\\.(css|styl|less|sass|scss)$": "babel-jest",
+    ".+\\.(png|jpg|svg|ttf|woff|woff2)$": "<rootDir>/src/utils/test/fileMock.js"
+  },
+  "collectCoverage": true,
+  "collectCoverageFrom": ["**/*.jsx", "**/*.js", "!**/*.snap.js", "!**/*.test.js", "**/*.tsx", "**/*.ts", "!**/*.snap.ts", "!./src/common/**/*.ts", "!**/*.test.tsx"],
+  "coverageDirectory": "coverage",
+  "coverageReporters": ["cobertura"],
+  "reporters": ["default", ["jest-junit", { "suiteName": "Jest JUnit Tests", "outputName": "coverage/test-results.xml" }]],
+  "snapshotResolver": "./jest-resolver.js",
+  "setupFilesAfterEnv": ["./src/utils/test/setupTests.js"],
+  "transform": {
+    "\\.(gql|graphql)$": "jest-transform-graphql",
+    ".+\\.(js|jsx|ts|tsx)$": "babel-jest"
+  }
+}

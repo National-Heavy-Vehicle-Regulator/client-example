@@ -1,0 +1,6 @@
+dist
+coverage
+*.json
+.yarn
+.nyc_output
+.history

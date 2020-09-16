@@ -1,0 +1,156 @@
+type Fields {
+  companyName: Boolean
+  companyWebsite: Boolean
+  contactType: Boolean
+  created: Boolean
+  createdBy: Boolean
+  department: Boolean
+  designation: Boolean
+  email: Boolean
+  fax: Boolean
+  firstName: Boolean
+  id: Boolean
+  ip: Boolean
+  jurisdiction: Boolean
+  lastName: Boolean
+  mobilePhone: Boolean
+  modified: Boolean
+  modifiedBy: Boolean
+  modifiedOffline: Boolean
+  postalAddress: Boolean
+  status: Boolean
+  team: Boolean
+  workPhone: Boolean
+}
+
+type Filter {
+  fields: Fields
+  limit: Int
+  offset: Int
+  order: [String]
+  skip: Int
+  where: JSON
+}
+
+"""
+The `JSON` scalar type represents JSON values as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).
+"""
+scalar JSON
+
+input PbsContactFieldsInput {
+  companyName: Boolean
+  companyWebsite: Boolean
+  contactType: Boolean
+  created: Boolean
+  createdBy: Boolean
+  department: Boolean
+  designation: Boolean
+  email: Boolean
+  fax: Boolean
+  firstName: Boolean
+  id: Boolean
+  ip: Boolean
+  jurisdiction: Boolean
+  lastName: Boolean
+  mobilePhone: Boolean
+  modified: Boolean
+  modifiedBy: Boolean
+  modifiedOffline: Boolean
+  postalAddress: Boolean
+  status: Boolean
+  team: Boolean
+  workPhone: Boolean
+}
+
+input PbsContactFilterInput {
+  fields: PbsContactFieldsInput
+  limit: Int
+  offset: Int
+  order: [String]
+  skip: Int
+  where: JSON
+}
+
+"""A Performance Based Standards contact"""
+type PbsContactPublic {
+  """Contact company name"""
+  companyName: String
+
+  """Contact company website"""
+  companyWebsite: String
+
+  """The contact type"""
+  contactType: String
+
+  """The date the record was created"""
+  created: String
+
+  """The id of the user who created the record"""
+  createdBy: Float
+
+  """Contact department"""
+  department: String
+
+  """Contact designation"""
+  designation: String
+
+  """Contact email"""
+  email: String
+
+  """Contact fax number"""
+  fax: String
+
+  """Contact first name"""
+  firstName: String
+
+  """The unique identifier for the application"""
+  id: Float
+
+  """The IP address last associated with modification of the record"""
+  ip: String
+
+  """Contact jurisdiction"""
+  jurisdiction: String
+
+  """Contact last name"""
+  lastName: String
+
+  """Contact mobile phone"""
+  mobilePhone: String
+
+  """The date the record was last modified"""
+  modified: String
+
+  """The id of the user who last modified the record"""
+  modifiedBy: Float
+
+  """The date the record was last modified offline"""
+  modifiedOffline: String
+
+  """Contact postal address"""
+  postalAddress: String
+
+  """Contact status"""
+  status: String
+
+  """Contact team"""
+  team: String
+
+  """Contact work phone"""
+  workPhone: String
+}
+
+type PbsContactQuery {
+  count: Float
+  data: [PbsContactPublic]
+  filter: Filter
+}
+
+type Query {
+  """
+  
+  
+  Equivalent to GET /pbs-contacts
+  """
+  pbsContactQuery(pbsContactFilter: PbsContactFilterInput): PbsContactQuery
+}

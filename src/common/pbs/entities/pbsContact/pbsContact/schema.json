@@ -1,0 +1,155 @@
+{
+  "title": "PbsContact",
+  "properties": {
+    "ip": {
+      "type": "string",
+      "title": "IP",
+      "description": "The IP address last associated with modification of the record",
+      "maxLength": 12
+    },
+    "created": {
+      "type": "string",
+      "format": "date-time",
+      "title": "Created",
+      "description": "The date the record was created"
+    },
+    "modified": {
+      "type": "string",
+      "format": "date-time",
+      "title": "Modified",
+      "description": "The date the record was last modified"
+    },
+    "modifiedOffline": {
+      "type": "string",
+      "format": "date-time",
+      "title": "Modified Offline",
+      "description": "The date the record was last modified offline"
+    },
+    "createdBy": {
+      "type": "number",
+      "title": "Created By",
+      "description": "The id of the user who created the record"
+    },
+    "modifiedBy": {
+      "type": "number",
+      "title": "Modified By",
+      "description": "The id of the user who last modified the record"
+    },
+    "id": {
+      "type": "number",
+      "title": "Id",
+      "description": "The unique identifier for the application"
+    },
+    "contactType": {
+      "type": "string",
+      "title": "Contact type",
+      "description": "The contact type",
+      "enum": [
+        "certifier",
+        "assessor",
+        "jurisdiction"
+      ]
+    },
+    "firstName": {
+      "type": "string",
+      "title": "First name",
+      "description": "Contact first name"
+    },
+    "lastName": {
+      "type": "string",
+      "title": "Last name",
+      "description": "Contact last name"
+    },
+    "companyName": {
+      "type": "string",
+      "title": "Company name",
+      "description": "Contact company name"
+    },
+    "companyWebsite": {
+      "type": "string",
+      "title": "Company website",
+      "description": "Contact company website"
+    },
+    "email": {
+      "type": "string",
+      "title": "Email",
+      "description": "Contact email"
+    },
+    "workPhone": {
+      "type": "string",
+      "title": "Work phone",
+      "description": "Contact work phone"
+    },
+    "mobilePhone": {
+      "type": "string",
+      "title": "Mobile phone",
+      "description": "Contact mobile phone"
+    },
+    "fax": {
+      "type": "string",
+      "title": "Fax number",
+      "description": "Contact fax number"
+    },
+    "postalAddress": {
+      "type": "string",
+      "title": "Postal address",
+      "description": "Contact postal address"
+    },
+    "jurisdiction": {
+      "type": "string",
+      "title": "Jurisdiction",
+      "description": "Contact jurisdiction"
+    },
+    "designation": {
+      "type": "string",
+      "title": "Designation",
+      "description": "Contact designation"
+    },
+    "team": {
+      "type": "string",
+      "title": "Team",
+      "description": "Contact team"
+    },
+    "department": {
+      "type": "string",
+      "title": "Department",
+      "description": "Contact department"
+    },
+    "status": {
+      "type": "string",
+      "title": "Status",
+      "description": "Contact status",
+      "enum": [
+        "current",
+        "renewal in progress",
+        "inactive"
+      ]
+    }
+  },
+  "additionalProperties": true,
+  "description": "A Performance Based Standards contact",
+  "x-auth": {
+    "actions": {
+      "create": {
+        "policies": [
+          "$everyone"
+        ]
+      },
+      "find": {
+        "policies": [
+          "$everyone"
+        ]
+      },
+      "findById": {
+        "policies": [
+          "$everyone"
+        ]
+      },
+      "updateById": {
+        "policies": [
+          "$everyone"
+        ]
+      }
+    }
+  }
+}
